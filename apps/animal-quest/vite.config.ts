@@ -2,7 +2,7 @@ import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   base: "./",
-  server: { port: 5174 },
+  server: { port: 5174, strictPort: true },
   staged: {
     "*": "vp check --fix",
   },

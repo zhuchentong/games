@@ -6,6 +6,8 @@
   "scripts": {
     "ready": "vp check && vp run -r test && vp run -r build",
     "dev": "vp run website#dev",
+    "dev:animal-quest": "vp run animal-quest#dev",
+    "dev:tower-100": "vp run tower-100#dev",
     "prepare": "vp config"
   },
   "devDependencies": {

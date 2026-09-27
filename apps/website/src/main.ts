@@ -1,60 +1,47 @@
 import "./style.css";
-import heroImg from "./assets/hero.png";
-import typescriptLogo from "./assets/typescript.svg";
-import viteLogo from "./assets/vite.svg";
-import { setupCounter } from "./counter.ts";
+
+interface Game {
+  id: string;
+  title: string;
+  tagline: string;
+  href: string;
+  accent: string;
+}
+
+const GAMES: Game[] = [
+  {
+    id: "animal-quest",
+    title: "动物斗恶龙",
+    tagline: "动物英雄闯关斗龙,多阶段 Boss、商店与技能build。",
+    href: import.meta.env.DEV ? "http://127.0.0.1:5174/" : "./animal-quest/",
+    accent: "#8b7cf8",
+  },
+  {
+    id: "tower-100",
+    title: "是男人就上100层",
+    tagline: "经典垂直登塔跳台,手速与胆量的双重考验。",
+    href: import.meta.env.DEV ? "http://127.0.0.1:5175/" : "./tower-100/",
+    accent: "#ff9457",
+  },
+];
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
-
-<div class="ticks"></div>
-
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
-
-<div class="ticks"></div>
-<section id="spacer"></section>
+  <main class="hub">
+    <header class="hub-header">
+      <h1>游戏合集</h1>
+      <p>挑一款,直接开玩。</p>
+    </header>
+    <section class="grid">
+      ${GAMES.map(
+        (g) => `
+        <a class="card" href="${g.href}" style="--accent: ${g.accent}">
+          <span class="card-tag">${g.id}</span>
+          <h2 class="card-title">${g.title}</h2>
+          <p class="card-desc">${g.tagline}</p>
+          <span class="card-cta">开始游戏 →</span>
+        </a>`,
+      ).join("")}
+    </section>
+    <footer class="hub-footer">更多游戏制作中……</footer>
+  </main>
 `;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);

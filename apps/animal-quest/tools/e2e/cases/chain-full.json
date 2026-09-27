@@ -1,0 +1,6 @@
+{
+  "name": "chain-full 标题→选角→关卡→HUD",
+  "url": "{BASE}/",
+  "actions": "wait:900,press:Enter,wait:600,press:Enter,wait:1300,log:UI_OK=__game.scene.isActive('UIScene')===true,log:CHAR=__game.scene.getScene('Level1').player.config.id==='tiger',log:V=window.UI_OK+''+window.CHAR",
+  "expect": ["[page] truetrue"]
+}

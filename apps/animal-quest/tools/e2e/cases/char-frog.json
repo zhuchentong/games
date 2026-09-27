@@ -1,0 +1,6 @@
+{
+  "name": "char-frog 蛙跑动动画+二段跳",
+  "url": "{BASE}/?scene=Level1&char=frog&x=900",
+  "actions": "wait:3000,log:void(window.P=__game.scene.getScene('Level1').player),hold:D,wait:300,log:RUN=window.P.anims.currentAnim.key==='frog-run',release:D,wait:400,press:Space,wait:250,press:Space,wait:120,log:DJ=window.P.jumpCount===2,log:V=window.RUN+''+window.DJ",
+  "expect": ["[page] truetrue"]
+}

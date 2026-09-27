@@ -1,0 +1,6 @@
+{
+  "name": "health-pack 血包拾取回血",
+  "url": "{BASE}/?scene=Level1&char=tiger",
+  "actions": "wait:1800,log:void(window.P=__game.scene.getScene('Level1').player),log:void(window.P.damage(20)),log:H0=window.P.hp===120,log:void(window.__dropPack()),hold:D,wait:300,release:D,log:H1=window.P.hp===140,log:V=window.H0+''+window.H1",
+  "expect": ["[page] truetrue"]
+}

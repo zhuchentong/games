@@ -1,0 +1,6 @@
+{
+  "name": "persistence 存档刷新持久化",
+  "url": "{BASE}/",
+  "actions": "wait:900,press:Enter,wait:600,press:Enter,wait:1300,reload,wait:1200,log:PERSIST=window.JSON.parse(localStorage.getItem('adl_save_v1')).lastCharacter==='tiger',log:V=window.PERSIST",
+  "expect": ["[page] true"]
+}

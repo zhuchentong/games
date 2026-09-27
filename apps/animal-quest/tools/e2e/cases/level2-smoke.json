@@ -1,0 +1,6 @@
+{
+  "name": "level2-smoke 第二关直达：场景/HUD/九敌刷怪",
+  "url": "{BASE}/?scene=Level2&char=tiger&x=200",
+  "actions": "wait:3000,log:A=__game.scene.isActive('Level2')===true,log:B=__game.scene.isActive('UIScene')===true,log:C=__game.scene.getScene('Level2').combat.aliveCount()===9,log:V=window.A+''+window.B+''+window.C",
+  "expect": ["[page] truetruetrue"]
+}

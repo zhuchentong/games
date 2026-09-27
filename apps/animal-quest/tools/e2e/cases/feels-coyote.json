@@ -1,0 +1,6 @@
+{
+  "name": "feels-coyote 土狼时间",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=1100",
+  "actions": "wait:1800,log:void(window.P=__game.scene.getScene('Level1').player),hold:D,wait:150,press:Space,wait:150,log:COYOTE=window.P.jumpCount===1&&window.P.body.velocity.y<-100,log:V=window.COYOTE",
+  "expect": ["[page] true"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "saw-hazard 锯片杀伤",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=2560",
+  "actions": "wait:1200,log:void(window.P=__game.scene.getScene('Level1').player),log:window.HP0=window.P.hp,wait:4000,log:SAW=window.P.hp<window.HP0,log:V=window.SAW",
+  "expect": ["[page] true"]
+}

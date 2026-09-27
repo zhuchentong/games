@@ -1,0 +1,6 @@
+{
+  "name": "victory-esc 通关转场窗口按 ESC 不清档不回标题",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=5700",
+  "actions": "wait:3400,press:Escape,wait:600,log:void(window.B=__game.scene.getScene('Level1').boss),log:void(window.B.hp=20),press:J,wait:500,press:J,wait:500,press:J,wait:2500,hold:D,wait:600,release:D,press:Escape,wait:200,press:Escape,wait:2000,log:L2=__game.scene.isActive('Level2')===true,log:TITLE=__game.scene.isActive('Title')===false,log:SAVE=(window.JSON.parse(localStorage.getItem('adl_save_v1'))??{}).level===2,log:V=window.L2+''+window.TITLE+''+window.SAVE",
+  "expect": ["[page] truetrue"]
+}

@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background: #0b0d10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  /* 全屏画布页无需滚动：杜绝 headless/小视口下画布 FIT 计算瞬间挤出滚动条 */
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 960px;
+}
+
+canvas {
+  image-rendering: pixelated;
+}
+
+/* JS 分块加载期间的占位（game.ts 挂载画布后移除） */
+.boot-loading {
+  font-family: monospace;
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: #8a93a5;
+  text-align: center;
+  padding-top: 40vh;
+  animation: boot-blink 1s steps(2) infinite;
+}
+
+@keyframes boot-blink {
+  50% {
+    opacity: 0.25;
+  }
+}

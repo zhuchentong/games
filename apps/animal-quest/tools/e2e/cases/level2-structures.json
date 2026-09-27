@@ -1,0 +1,6 @@
+{
+  "name": "level2-structures 激光×3/吊台×2/敌配结构",
+  "url": "{BASE}/?scene=Level2&char=tiger&x=3300",
+  "actions": "wait:3000,log:L=__game.scene.getScene('Level2'),log:G=window.L.lasers.length===3,log:M=window.L.movers.length===2,log:C=window.L.combat.aliveCount()===9,log:V=window.G+''+window.M+''+window.C",
+  "expect": ["[page] truetruetrue"]
+}

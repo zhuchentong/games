@@ -1,0 +1,6 @@
+{
+  "name": "pause-flow 暂停：P 暂停/恢复 + 面板显隐 + T 回标题保留存档",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=400",
+  "actions": "wait:3200,log:void(window.L=__game.scene.getScene('Level1')),log:void(window.U=__game.scene.getScene('UIScene')),press:P,wait:120,log:PA=window.L.pauseOpen===true,log:UP=window.U.pauseOpen===true,press:P,wait:120,log:RB=window.L.pauseOpen===false,press:P,wait:120,log:PA2=window.L.pauseOpen===true,log:SAVE0=((window.JSON.parse(localStorage.getItem('adl_save_v1'))??{}).cleared)!==true,press:T,wait:900,log:TITLE=__game.scene.isActive('Title')===true,log:SAVE1=((window.JSON.parse(localStorage.getItem('adl_save_v1'))??{}).cleared)!==true,log:LV=(((window.JSON.parse(localStorage.getItem('adl_save_v1'))??{}).level)??1)===1,log:V=window.PA+''+window.UP+''+window.RB+''+window.PA2+''+window.SAVE0+''+window.TITLE+''+window.SAVE1+''+window.LV",
+  "expect": ["[page] truetruetruetruetruetruetruetrue"]
+}

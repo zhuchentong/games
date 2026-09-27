@@ -1,0 +1,6 @@
+{
+  "name": "level3-thornbur 爆刺栗：追击自爆造成伤害且玩家存活",
+  "url": "{BASE}/?scene=Level3&char=tiger&x=3200",
+  "actions": "wait:8000,log:S=__game.scene.getScene('Level3'),log:HIT=window.S.hitsTaken>=1,log:ALIVE=window.S.player.hp>0,log:V=window.HIT+''+window.ALIVE",
+  "expect": ["[page] truetrue"]
+}

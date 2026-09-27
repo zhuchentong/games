@@ -1,0 +1,6 @@
+{
+  "name": "save-clear ESC 清空存档",
+  "url": "{BASE}/",
+  "actions": "wait:1800,press:Enter,wait:600,press:Enter,wait:1500,log:CHAR0=window.JSON.parse(localStorage.getItem('adl_save_v1')).lastCharacter==='tiger',press:Escape,wait:900,log:CHAR1=window.JSON.parse(localStorage.getItem('adl_save_v1')).lastCharacter===null,log:CLR=window.JSON.parse(localStorage.getItem('adl_save_v1')).cleared===false,log:CP=window.JSON.parse(localStorage.getItem('adl_save_v1')).checkpointX===null,log:V=window.CHAR0+''+window.CHAR1+''+window.CLR+''+window.CP",
+  "expect": ["[page] truetruetruetrue"]
+}

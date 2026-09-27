@@ -1,0 +1,6 @@
+{
+  "name": "spring-bounce 弹簧弹射",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=3560",
+  "actions": "wait:1500,log:void(window.P=__game.scene.getScene('Level1').player),wait:400,log:B=window.P.y<340,log:W=window.P.body.velocity.y,log:V=window.B",
+  "expect": ["[page] true"]
+}

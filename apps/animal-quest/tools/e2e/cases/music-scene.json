@@ -1,0 +1,6 @@
+{
+  "name": "music-scene BGM 场景切换 level→boss",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=5220",
+  "actions": "wait:900,log:T0=window.__music.current(),hold:D,wait:500,release:D,wait:2400,log:T1=window.__music.current(),log:V=window.T0+window.T1",
+  "expect": ["[page] levelboss"]
+}

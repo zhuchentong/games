@@ -1,0 +1,6 @@
+{
+  "name": "skill-cd 技能冷却条恢复比例",
+  "url": "{BASE}/?scene=Level1&char=bird",
+  "actions": "wait:3000,press:K,log:C0=__game.scene.getScene('UIScene').skillCdRatio<0.5,wait:2300,log:C1=__game.scene.getScene('UIScene').skillCdRatio===1,log:V=window.C0+''+window.C1",
+  "expect": ["[page] truetrue"]
+}

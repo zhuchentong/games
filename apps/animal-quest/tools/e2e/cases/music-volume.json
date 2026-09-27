@@ -1,0 +1,6 @@
+{
+  "name": "music-volume 音量档持久化",
+  "url": "{BASE}/?scene=Level1&char=tiger",
+  "actions": "wait:600,press:=,press:=,press:=,press:=,press:=,press:=,press:=,press:=,press:-,log:V0=window.localStorage.getItem('adl_volume'),reload,wait:600,log:V1=window.localStorage.getItem('adl_volume')",
+  "expect": ["[page] 4\n[page] 4"]
+}

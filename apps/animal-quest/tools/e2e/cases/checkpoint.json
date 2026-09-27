@@ -1,0 +1,6 @@
+{
+  "name": "checkpoint 检查点激活+写档",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=3870",
+  "actions": "wait:1200,log:void(window.P=__game.scene.getScene('Level1').player),hold:D,wait:1500,release:D,wait:400,log:CP=(window.JSON.parse(localStorage.getItem('adl_save_v1'))??{}).checkpointX===3900,log:V=window.CP",
+  "expect": ["[page] true"]
+}

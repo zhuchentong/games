@@ -1,0 +1,6 @@
+{
+  "name": "level3-smoke 第三关直达：场景/HUD/十敌刷怪",
+  "url": "{BASE}/?scene=Level3&char=tiger&x=200",
+  "actions": "wait:3000,log:A=__game.scene.isActive('Level3')===true,log:B=__game.scene.isActive('UIScene')===true,log:C=__game.scene.getScene('Level3').combat.aliveCount()===10,log:V=window.A+''+window.B+''+window.C",
+  "expect": ["[page] truetruetrue"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "boss-phases 三阶段切换",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=5380",
+  "actions": "wait:3400,press:Escape,wait:600,log:void(window.P=__game.scene.getScene('Level1').player),log:void(window.P.grantInvulnerability(60000)),log:void(window.B=__game.scene.getScene('Level1').boss),log:void(window.B.hp=500),wait:300,log:P1=window.B.phaseIndex===1,log:void(window.B.hp=250),wait:300,log:P2=window.B.phaseIndex===2,log:V=window.P1+''+window.P2",
+  "expect": ["[page] truetrue"]
+}

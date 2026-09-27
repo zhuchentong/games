@@ -1,0 +1,6 @@
+{
+  "name": "feels-buffer 跳跃缓冲",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=900",
+  "actions": "wait:1800,log:void(window.P=__game.scene.getScene('Level1').player),press:Space,wait:900,press:Space,wait:300,log:BUFFER=window.P.jumpCount===1&&window.P.y<460,log:V=window.BUFFER",
+  "expect": ["[page] true"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "anim-state 虎动画状态机 idle/run/atk/jump",
+  "url": "{BASE}/?scene=Level1&char=tiger",
+  "actions": "wait:3000,log:void(window.P=__game.scene.getScene('Level1').player),log:IDLE0=window.P.anims.currentAnim.key==='tiger-idle',hold:D,wait:300,log:RUN=window.P.anims.currentAnim.key==='tiger-run',release:D,wait:500,press:J,log:ATK=window.P.anims.currentAnim.key==='tiger-atk',wait:600,press:Space,wait:150,log:AIR=window.P.anims.currentAnim.key==='tiger-jump',log:V=window.IDLE0+''+window.RUN+''+window.ATK+''+window.AIR",
+  "expect": ["[page] truetruetruetrue"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "merchant-shop 补给机购买升级",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=400",
+  "actions": "wait:3000,log:void(window.L=__game.scene.getScene('Level1')),log:void(window.U=__game.scene.getScene('UIScene')),log:L.coins=30,press:E,wait:180,log:O0=window.U.shopOpen===true,press:E,wait:180,log:B0=window.L.player.config.hp===160,log:B1=window.L.coins===27,press:E,wait:180,log:B2=window.L.player.config.hp===180,log:B3=window.L.coins===15,press:Q,wait:120,log:C0=window.U.shopOpen===false,log:V=window.O0+''+window.B0+''+window.B1+''+window.B2+''+window.B3+''+window.C0",
+  "expect": ["[page] truetruetruetruetruetrue"]
+}

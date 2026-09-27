@@ -1,0 +1,6 @@
+{
+  "name": "dodge-roll 翻滚闪避+冷却",
+  "url": "{BASE}/?scene=Level1&char=tiger",
+  "actions": "wait:3000,log:void(window.P=__game.scene.getScene('Level1').player),log:void(window.U=__game.scene.getScene('UIScene')),press:Shift,log:window.P.damage(20),log:D0=window.P.hp===window.P.config.hp,log:D1=window.U.rollCdRatio<0.5,wait:1100,log:window.P.damage(20),log:D2=window.P.hp<window.P.config.hp,log:D3=window.U.rollCdRatio===1,log:V=window.D0+''+window.D1+''+window.D2+''+window.D3",
+  "expect": ["[page] truetruetruetrue"]
+}

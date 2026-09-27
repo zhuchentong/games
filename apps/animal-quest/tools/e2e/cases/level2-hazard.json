@@ -1,0 +1,6 @@
+{
+  "name": "level2-hazard 熔岩坑：坠入受伤且弹起不死",
+  "url": "{BASE}/?scene=Level2&char=tiger&x=1480",
+  "actions": "wait:3000,log:HP0=__game.scene.getScene('Level2').player.hp,hold:D,wait:800,release:D,wait:700,log:P=__game.scene.getScene('Level2').player,log:HURT=window.P.hp<window.HP0,log:ALIVE=window.P.hp>0,log:V=window.HURT+''+window.ALIVE",
+  "expect": ["[page] truetrue"]
+}

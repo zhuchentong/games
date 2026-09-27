@@ -1,0 +1,6 @@
+{
+  "name": "upgrade-persist 一关购买升级→通关跨关→二关属性保留",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=400",
+  "actions": "wait:3000,log:void(window.L=__game.scene.getScene('Level1')),log:void(window.U=__game.scene.getScene('UIScene')),log:L.coins=30,press:E,wait:180,log:O0=window.U.shopOpen===true,press:E,wait:180,log:B0=window.L.player.config.hp===160,log:S0=window.JSON.parse(localStorage.getItem('adl_save_v1')).upgrades.hp===1,log:C0=window.L.coins===27,press:Q,wait:120,log:C1=window.U.shopOpen===false,log:void(window.L.player.setX(5700)),log:void(window.L.player.setY(380)),log:void(window.L.player.body.setVelocity(0)),wait:3400,press:Escape,wait:600,log:void(window.B=__game.scene.getScene('Level1').boss),log:void(window.B.hp=20),press:J,wait:500,press:J,wait:500,press:J,wait:2500,hold:D,wait:900,release:D,wait:400,wait:1800,log:L2=__game.scene.isActive('Level2')===true,log:void(window.N=__game.scene.getScene('Level2')),log:P0=window.N.player.config.hp===160,log:P1=window.N.upgradeLevels.hp===1,log:P2=window.JSON.parse(localStorage.getItem('adl_save_v1')).upgrades.hp===1,log:V=window.O0+''+window.B0+''+window.S0+''+window.C0+''+window.C1+''+window.L2+''+window.P0+''+window.P1+''+window.P2",
+  "expect": ["[page] truetruetruetruetruetruetruetruetrue"]
+}

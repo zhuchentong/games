@@ -1,0 +1,6 @@
+{
+  "name": "level3-structures 幻影×5/气流×2/激光×4/吊台/敌配结构",
+  "url": "{BASE}/?scene=Level3&char=tiger&x=200",
+  "actions": "wait:3000,log:L=__game.scene.getScene('Level3'),log:F=window.L.fading.length===5,log:U=window.L.updrafts.length===2,log:G=window.L.lasers.length===4,log:M=window.L.movers.length===1,log:C=window.L.combat.aliveCount()===10,log:V=window.F+''+window.U+''+window.G+''+window.M+''+window.C",
+  "expect": ["[page] truetruetruetruetrue"]
+}

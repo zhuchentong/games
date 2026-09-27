@@ -1,0 +1,6 @@
+{
+  "name": "spitter-lob 喷火龟抛射火球",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=3760",
+  "actions": "wait:4200,log:HP=__game.scene.getScene('Level1').player.hp<140,log:PR=__game.scene.getScene('Level1').combat.projectiles.length>0",
+  "expect": ["[page] true"]
+}

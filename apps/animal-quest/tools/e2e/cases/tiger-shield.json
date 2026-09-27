@@ -1,0 +1,6 @@
+{
+  "name": "tiger-shield 虎护盾免疫伤害",
+  "url": "{BASE}/?scene=Level1&char=tiger",
+  "actions": "wait:1800,log:void(window.P=__game.scene.getScene('Level1').player),log:window.HP0=window.P.hp,press:K,wait:200,log:void(window.P.damage(20)),log:B0=window.P.hp===window.HP0,wait:1000,log:void(window.P.damage(20)),log:B1=window.P.hp===window.HP0,wait:2200,log:void(window.P.damage(20)),log:B2=window.P.hp===window.HP0-20,log:V=window.B0+''+window.B1+''+window.B2",
+  "expect": ["[page] truetruetrue"]
+}

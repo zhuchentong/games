@@ -1,0 +1,9 @@
+{
+  "name": "animal-quest-e2e",
+  "version": "0.0.0",
+  "private": true,
+  "description": "E2E 校验 harness 依赖（与游戏主工程隔离，用 npm 安装）",
+  "dependencies": {
+    "playwright-core": "^1.50.0"
+  }
+}

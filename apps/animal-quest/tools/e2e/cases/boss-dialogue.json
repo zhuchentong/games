@@ -1,0 +1,6 @@
+{
+  "name": "boss-dialogue 入场对话：开门待命→面板弹出→E 推进→ESC 跳过开打",
+  "url": "{BASE}/?scene=Level1&char=tiger&x=5700",
+  "actions": "wait:3400,log:void(window.L=__game.scene.getScene('Level1')),log:void(window.U=__game.scene.getScene('UIScene')),log:D0=window.U.dialogueActive===true,log:O0=window.L.dialogueOpen===true,press:E,log:T0=window.U.dialogueActive===true,press:E,log:T1=window.U.dialogueActive===true,press:Escape,wait:400,log:S0=window.U.dialogueActive===false,log:S1=window.L.dialogueOpen===false,log:ENG=window.L.boss.engaged===true,log:V=window.D0+''+window.O0+''+window.T0+''+window.T1+''+window.S0+''+window.S1+''+window.ENG",
+  "expect": ["[page] truetruetruetruetruetruetrue"]
+}

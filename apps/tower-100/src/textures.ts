@@ -13,6 +13,12 @@ export const TEX = {
   belt: "belt",
   knife: "knife",
   heart: "heart",
+  heartEmpty: "heart-empty",
+  heartMax: "heart-max",
+  iconBounce: "icon-bounce",
+  iconShield: "icon-shield",
+  iconSlow: "icon-slow",
+  shieldBubble: "shield-bubble",
   dust: "dust",
   star: "star",
 } as const;
@@ -146,6 +152,58 @@ function heart(g: G): void {
   rect(g, 4, 3, 3, 3, 0xffffff, 0.6);
 }
 
+function heartEmpty(g: G): void {
+  circle(g, 5.5, 5.5, 5, 0x3d4852);
+  circle(g, 14.5, 5.5, 5, 0x3d4852);
+  triangle(g, 0.5, 8.5, 19.5, 8.5, 10, 17.5, 0x3d4852);
+  circle(g, 5.5, 5.5, 5, 0x5a6a78, 0.6);
+  circle(g, 14.5, 5.5, 5, 0x5a6a78, 0.6);
+}
+
+function heartMax(g: G): void {
+  // 金色爱心 + 白色加号：生命上限+1
+  circle(g, 6.5, 6.5, 6, 0xf9ca24);
+  circle(g, 17.5, 6.5, 6, 0xf9ca24);
+  triangle(g, 0.5, 10, 23.5, 10, 12, 21, 0xf9ca24);
+  rect(g, 10.5, 4.5, 3, 9, 0xffffff);
+  rect(g, 7.5, 7.5, 9, 3, 0xffffff);
+  rect(g, 4, 3, 3, 3, 0xffffff, 0.5);
+}
+
+function iconBounce(g: G): void {
+  // 绿色徽章 + 白色双上箭头：弹跳强化
+  circle(g, 10, 10, 9, 0x1e7a4f);
+  circle(g, 10, 10, 7.5, 0x2ed573);
+  triangle(g, 4.5, 10, 10, 4.5, 15.5, 10, 0xffffff);
+  triangle(g, 4.5, 15.5, 10, 10, 15.5, 15.5, 0xffffff);
+}
+
+function iconShield(g: G): void {
+  // 蓝色盾牌
+  rect(g, 3, 2, 14, 10, 0x74b9ff);
+  circle(g, 5, 4, 2, 0x74b9ff);
+  circle(g, 15, 4, 2, 0x74b9ff);
+  triangle(g, 3, 11, 17, 11, 10, 18, 0x74b9ff);
+  rect(g, 8.5, 4, 3, 8, 0xdff3ff);
+}
+
+function iconSlow(g: G): void {
+  // 紫色时钟：时间减缓
+  circle(g, 10, 10, 9, 0x8e44ad);
+  circle(g, 10, 10, 7, 0x2d1b47);
+  rect(g, 9, 4.5, 2, 6, 0xffffff);
+  rect(g, 10, 9, 5.5, 2, 0xffffff);
+  circle(g, 10, 10, 1.5, 0xffffff);
+}
+
+function shieldBubble(g: G): void {
+  // 护盾气泡：淡蓝圆环
+  g.lineStyle(2, 0x74b9ff, 0.95);
+  g.strokeCircle(24, 24, 21);
+  g.fillStyle(0x74b9ff, 0.14);
+  g.fillCircle(24, 24, 21);
+}
+
 function dust(g: G): void {
   rect(g, 0, 0, 6, 6, 0xffffff, 0.9);
 }
@@ -195,6 +253,30 @@ export function createTextures(scene: Phaser.Scene): void {
 
   heart(g);
   g.generateTexture(TEX.heart, 20, 18);
+  g.clear();
+
+  heartEmpty(g);
+  g.generateTexture(TEX.heartEmpty, 20, 18);
+  g.clear();
+
+  heartMax(g);
+  g.generateTexture(TEX.heartMax, 24, 22);
+  g.clear();
+
+  iconBounce(g);
+  g.generateTexture(TEX.iconBounce, 20, 20);
+  g.clear();
+
+  iconShield(g);
+  g.generateTexture(TEX.iconShield, 20, 20);
+  g.clear();
+
+  iconSlow(g);
+  g.generateTexture(TEX.iconSlow, 20, 20);
+  g.clear();
+
+  shieldBubble(g);
+  g.generateTexture(TEX.shieldBubble, 48, 48);
   g.clear();
 
   dust(g);

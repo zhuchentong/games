@@ -2,6 +2,7 @@
 
 import Phaser from "phaser";
 import { GAME_WIDTH } from "../config";
+import { isMuted, sfxStart, toggleMuted, unlockAudio } from "../audio";
 import { TEX } from "../textures";
 import { FONT, loadBest } from "../util";
 
@@ -63,9 +64,11 @@ export class TitleScene extends Phaser.Scene {
     const rules = [
       "← → 或 A D 移动，踩到平台会自动弹跳",
       "弹簧弹得高 · 传送带会推你走",
-      "小心：钉板踩上就没命，飞刀会掉下来",
+      "小心：钉板和飞刀都会扣血",
       "易碎的板子只能踩一次",
+      "掉落道具：金心扩容 · 弹跳强化 · 护盾 · 时间减缓",
       "屏幕会不断上移，掉出画面即失败",
+      "按 M 或点右上角 ♪ 切换音乐",
     ];
     this.add
       .text(GAME_WIDTH / 2, 480, rules, {
@@ -88,11 +91,42 @@ export class TitleScene extends Phaser.Scene {
       .setOrigin(0.5);
     this.tweens.add({ targets: start, alpha: 0.25, duration: 600, yoyo: true, repeat: -1 });
 
-    this.input.keyboard?.on("keydown", () => this.startGame());
+    // —— 音乐开关（右上角 ♪）——
+    const mute = this.add
+      .text(GAME_WIDTH - 12, 12, isMuted() ? "♪ 已静音" : "♪ 音乐开", {
+        fontFamily: FONT,
+        fontSize: "15px",
+        color: isMuted() ? "#77848f" : "#f5f6fa",
+      })
+      .setOrigin(1, 0)
+      .setInteractive({ useHandCursor: true });
+    mute.on(
+      "pointerdown",
+      (
+        _p: Phaser.Input.Pointer,
+        _x: number,
+        _y: number,
+        event: { stopPropagation: () => void },
+      ) => {
+        event.stopPropagation();
+        unlockAudio();
+        const muted = toggleMuted();
+        mute.setText(muted ? "♪ 已静音" : "♪ 音乐开");
+        mute.setColor(muted ? "#77848f" : "#f5f6fa");
+      },
+    );
+
+    this.input.keyboard?.on("keydown", (ev: KeyboardEvent) => {
+      // M 只切换音乐，不开始游戏
+      if (ev.key === "m" || ev.key === "M") return;
+      this.startGame();
+    });
     this.input.on("pointerdown", () => this.startGame());
   }
 
   private startGame(): void {
+    unlockAudio();
+    sfxStart();
     this.cameras.main.fadeOut(250, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => this.scene.start("game"));
   }

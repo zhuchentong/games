@@ -2,6 +2,7 @@
 
 import Phaser from "phaser";
 import { GAME_HEIGHT, GAME_WIDTH, WIN_FLOOR } from "../config";
+import { toggleMuted, unlockAudio } from "../audio";
 import { TEX } from "../textures";
 import { FONT } from "../util";
 
@@ -129,6 +130,10 @@ export class ResultScene extends Phaser.Scene {
 
     this.input.keyboard?.on("keydown-SPACE", () => this.restart());
     this.input.keyboard?.on("keydown-T", () => this.toTitle());
+    this.input.keyboard?.on("keydown-M", () => {
+      unlockAudio();
+      toggleMuted();
+    });
     this.input.on("pointerdown", () => this.restart());
   }
 

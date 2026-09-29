@@ -31,6 +31,9 @@ dist-ssr
 
 # AI agent worktrees
 .claude/worktrees/
+
+# ZCode 本地会话数据(计划/存档备份等)
+.zcode/
 !.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json

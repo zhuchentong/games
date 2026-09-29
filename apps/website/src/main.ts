@@ -23,6 +23,13 @@ const GAMES: Game[] = [
     href: import.meta.env.DEV ? "http://127.0.0.1:5175/" : "./tower-100/",
     accent: "#ff9457",
   },
+  {
+    id: "pixel-pet",
+    title: "像素电子宠物",
+    tagline: "随机四选一孵化猫狗兔鸡,喂食玩耍清洁睡觉,分支进化全看照顾。",
+    href: import.meta.env.DEV ? "http://127.0.0.1:5176/" : "./pixel-pet/",
+    accent: "#ffd32a",
+  },
 ];
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `

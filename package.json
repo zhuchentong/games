@@ -9,6 +9,7 @@
     "dev:animal-quest": "vp run animal-quest#dev",
     "dev:tower-100": "vp run tower-100#dev",
     "dev:pixel-pet": "vp run pixel-pet#dev",
+    "shots": "node tools/screenshots/capture.js",
     "prepare": "vp config"
   },
   "devDependencies": {

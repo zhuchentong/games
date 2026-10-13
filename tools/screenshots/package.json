@@ -1,0 +1,9 @@
+{
+  "name": "screenshots",
+  "version": "0.0.0",
+  "private": true,
+  "description": "README 截图生成工具(workspace 成员，依赖经 vp install 安装)",
+  "dependencies": {
+    "playwright-core": "^1.50.0"
+  }
+}

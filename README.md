@@ -11,6 +11,12 @@ Vite+ monorepo,收录自研小游戏。
 | `apps/tower-100`    | 是男人就上100层(原 floor-100) | 5175     |
 | `apps/pixel-pet`    | 像素电子宠物                  | 5176     |
 
+## 截图
+
+| 动物斗恶龙                                       | 是男人就上100层                                    | 像素电子宠物                                    |
+| ------------------------------------------------ | -------------------------------------------------- | ----------------------------------------------- |
+| ![动物斗恶龙](docs/screenshots/animal-quest.png) | ![是男人就上100层](docs/screenshots/tower-100.png) | ![像素电子宠物](docs/screenshots/pixel-pet.png) |
+
 ## Development
 
 - Check everything is ready:
@@ -51,4 +57,10 @@ vp run dev:pixel-pet
 cd apps/animal-quest/tools/e2e
 npm ci
 node run-cases.js
+```
+
+- 重新生成 README 截图(需本机 Chrome,依赖已随 workspace `vp install` 安装):
+
+```bash
+vp run shots
 ```
